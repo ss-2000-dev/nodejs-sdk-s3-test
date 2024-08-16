@@ -9,3 +9,7 @@ AWS_REGION=REGION
 ```
 
 sample-nodejs-sdk.csv は元データ
+
+### Next.js で画面表示
+
+見た目の部分は後回しで

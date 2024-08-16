@@ -1,6 +1,0 @@
-InvoiceID,InvoiceDate,CustomerID,CustomerName,CustomerEmail,BillingAddress,ShippingAddress,InvoiceAmount,TaxAmount,TotalAmount,DueDate,PaymentStatus,PaymentMethod,InvoiceNotes
-INV-1001,2024-08-01,CUST-001,John Doe,john.doe@example.com,"123 Main St, Springfield, IL","456 Elm St, Springfield, IL",1000,80,1080,2024-08-15,Unpaid,Credit Card,First payment reminder sent
-INV-1002,2024-08-02,CUST-002,Jane Smith,jane.smith@example.com,"789 Oak St, Springfield, IL","101 Pine St, Springfield, IL",1500,120,1620,2024-08-16,Unpaid,PayPal,Discount applied for early payment
-INV-1003,2024-08-03,CUST-003,Bob Johnson,bob.johnson@example.com,"102 Maple St, Springfield, IL","202 Birch St, Springfield, IL",2000,160,2160,2024-08-17,Paid,Bank Transfer,Payment received on 2024-08-10
-INV-1004,2024-08-04,CUST-004,Alice Brown,alice.brown@example.com,"103 Cedar St, Springfield, IL","203 Cherry St, Springfield, IL",2500,200,2700,2024-08-18,Unpaid,Credit Card,Invoice includes late fee
-INV-1005,2024-08-05,CUST-005,Charlie Davis,charlie.davis@example.com,"104 Spruce St, Springfield, IL","204 Walnut St, Springfield, IL",3000,240,3240,2024-08-19,Unpaid,Credit Card,Third payment reminder sent

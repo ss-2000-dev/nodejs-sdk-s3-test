@@ -25,7 +25,8 @@ const downloadObjectAndConvertJson = async (bucketName, key) => {
 
     response.Body.pipe(
       parse({ columns: true }, function (err, data) {
-        console.log(data);
+        console.log(data); // オブジェクトに変換
+        // console.log(JSON.stringify(data)); // オブジェクトに変換 → JSON に変換
       })
     )
       .on("error", (error) => {
