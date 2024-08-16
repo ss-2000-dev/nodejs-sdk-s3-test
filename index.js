@@ -1,6 +1,8 @@
 import { S3Client, GetObjectCommand } from "@aws-sdk/client-s3";
 import fs from "fs";
 import "dotenv/config";
+import { parse } from "csv-parse";
+// import { Writable } from "stream";
 
 // 認証の設定
 // こちらの仕方はベストプラクティスではない
@@ -12,7 +14,7 @@ const s3Client = new S3Client({
   },
 });
 
-const downloadObject = async (bucketName, key, downloadPath) => {
+const downloadObjectAndConvertJson = async (bucketName, key) => {
   try {
     const command = new GetObjectCommand({
       Bucket: bucketName, // S3バケット名
@@ -21,7 +23,11 @@ const downloadObject = async (bucketName, key, downloadPath) => {
 
     const response = await s3Client.send(command);
 
-    response.Body.pipe(fs.createWriteStream(downloadPath))
+    response.Body.pipe(
+      parse({ columns: true }, function (err, data) {
+        console.log(data);
+      })
+    )
       .on("error", (error) => {
         throw error;
       })
@@ -36,6 +42,5 @@ const downloadObject = async (bucketName, key, downloadPath) => {
 // 使用例
 const bucketName = "nodejs-sdk-s3-test";
 const key = "sample-nodejs-sdk.csv";
-const downloadPath = "./output.csv";
 
-downloadObject(bucketName, key, downloadPath);
+downloadObjectAndConvertJson(bucketName, key);
